@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass-The-Word</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="front">
+        <div class="nav">
+            Pass-The-Word
+        </div>
+        <div class="hero">
+            <p>Do You Dare To Share?</p>
+            <p>Because...</p>
+            <p>We Only Guarantee</p>
+            <p><span>Anti</span>Security <span class="padding-block"></div></p>
+            <h3 class="subtitle">We help publicise your privacy, much like instagram but in a more easy and convienient way :)</h3>
+                <div class="cta"><a href="#"><button><span>100%</span> risk ahead!</button></a></div>
+            </div>
+        <div class="hero-background">
+            <img src="assets/background-hero.png" alt="background image">
+        </div>
+        <div class="overlay-images">
+            <img src="assets/lock.png" class="lock" alt="lock"><img src="assets/thinking.png" height="500px" class="thinking" alt="thinking">
+        </div>
+    </div>
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+@font-face {
+    font-family: 'Spirits Light';
+    src: url("fonts/spirits-light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Quine Coco';
+    src: url("fonts/QuineCocoRegularPersonalUseOnly-MV1xp.otf") format("opentype");
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbow-slide {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes slidebg {
+    0% {  }
+    100% { background-position: 0 0; }
+}
+
+@keyframes colorChange {
+    0% { background-color: #302157; }
+    10% { background-color: #fc8c5c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    20% { background-color: #fbcb5b; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    30% { background-color: #cb5ce3; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    40% { background-color: #fb5c5c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    50% { background-color: #ba5c8c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    60% { background-color: #fc7c5c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    70% { background-color: #d45c7c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    90% { background-color: #64d34c; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    80% { background-color: #d49cc4; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);;}
+    100% { background-color: #302157; box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);}
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Spirits Light';
+    overflow: hidden;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    font-family: 'Quine Coco';
+    background: white;
+    color: #000;
+    padding-block: 7px;
+    z-index: 3;
+    position: relative;
+}
+
+.front {
+    height: 100vh;
+    padding-top: 50px;
+    background: rgb(16,19,13);
+    background: linear-gradient(150deg, rgba(16,19,13,1) 0%, rgba(20,18,55,1) 24%, rgba(35,22,92,1) 82%, rgba(63,33,110,1) 100%);
+    position: relative;
+}
+
+.hero {
+    width: 100%;
+    display: flex;
+    font-size: 100px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero > p > span {
+    font-family: 'Quine Coco';
+    font-size: 90px;
+    padding: 20px;
+    margin-bottom: -60px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.212);
+}
+
+.hero > p {
+    margin-bottom: -130px;
+    letter-spacing: -2.5px;
+    text-align: center;
+    text-shadow:5px 5px 5px rgba(0, 0, 0, 0.212);
+}
+
+.hero-background {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.hero-background > img {
+    width: 100%;
+}
+
+.cta {
+    position:relative;
+    z-index: 5;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.cta > a > button {
+    font-family: 'Gloria Hallelujah';
+    font-size: 30px;
+    padding: 20px 40px;
+    background-color: #302157;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.212);
+}
+
+.cta > a > button:hover {
+    animation: colorChange 5s ease-in-out infinite;
+}
+
+.subtitle {
+    position: relative;
+    z-index: 5;
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: 'Spirits Light';
+    text-align: center;
+    top: 50px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.212);
+}
+
+.overlay-images {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    animation: rainbow 10s linear infinite;
+}
+
+.lock {
+    position: absolute;
+    top: 230px;
+    left: 100px;
+    rotate: -20deg;
+    z-index: 5;
+}
+
+.thinking {
+    position: absolute;
+    top: 517px;
+    right: 0px;
+    z-index: 5;
+}
+</style>
+</html>
