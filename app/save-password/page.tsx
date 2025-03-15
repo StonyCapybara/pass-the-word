@@ -1,4 +1,4 @@
-import { auth, signOut } from "app/auth";
+// import { auth, signOut } from "app/auth";
 import { getAllPosts } from "../db";
 import PostForm from "app/components/postForm";
 // import localFont from "next/font/local";
@@ -9,7 +9,7 @@ import PostForm from "app/components/postForm";
 // });
 
 export default async function SavePassword() {
-  let session = await auth();
+  // let session = await auth();
 
   const posts = await getAllPosts();
   //   console.log(posts);
@@ -21,13 +21,16 @@ export default async function SavePassword() {
         <div className="text-center w-fit m-auto">
           <h1 className={`text-2xl`}>Pass-The-Word</h1>
         </div>
-        <div>
+        {/* <div>
           <SignOut />
-        </div>
+        </div> */}
       </nav>
       <div className="w-[350px] mx-auto my-4">
         <PostForm />
       </div>
+      <h1 className="text-2xl font-bold text-center">
+        Look at all the passwords (for fun)
+      </h1>
       <div className="w-[694px] mx-auto">
         {posts.map((post) => (
           <div
@@ -65,15 +68,15 @@ export default async function SavePassword() {
   );
 }
 
-function SignOut() {
-  return (
-    <form
-      action={async () => {
-        "use server";
-        await signOut();
-      }}
-    >
-      <button type="submit">Sign out</button>
-    </form>
-  );
-}
+// function SignOut() {
+//   return (
+//     <form
+//       action={async () => {
+//         "use server";
+//         // await signOut();
+//       }}
+//     >
+//       <button type="submit">Sign out</button>
+//     </form>
+//   );
+// }
