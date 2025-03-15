@@ -1,4 +1,4 @@
-import { auth } from "app/auth";
+import { auth, signOut } from "app/auth";
 import { getAllPosts } from "../db";
 import PostForm from "app/components/postForm";
 // import localFont from "next/font/local";
@@ -16,12 +16,16 @@ export default async function SavePassword() {
 
   return (
     <div className="flex flex-col h-screen bg-black text-white">
-      <nav className="w-full border-b-2 border-gray-800">
-        <div className="text-center w-full">
-          <h1 className={` text-2xl`}>Pass-The-Word</h1>
+      <nav className="w-full border-b-2 border-gray-800 flex justify-between items-center p-4">
+        <div></div>
+        <div className="text-center w-fit m-auto">
+          <h1 className={`text-2xl`}>Pass-The-Word</h1>
+        </div>
+        <div>
+          <SignOut />
         </div>
       </nav>
-      <div className="w-lg mx-auto">
+      <div className="w-[350px] mx-auto my-4">
         <PostForm />
       </div>
       <div className="w-[694px] mx-auto">
@@ -58,5 +62,18 @@ export default async function SavePassword() {
         ))}
       </div>
     </div>
+  );
+}
+
+function SignOut() {
+  return (
+    <form
+      action={async () => {
+        "use server";
+        await signOut();
+      }}
+    >
+      <button type="submit">Sign out</button>
+    </form>
   );
 }

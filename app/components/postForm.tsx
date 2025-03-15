@@ -7,30 +7,63 @@ function isValidEmail(email: string): boolean {
 
 export default function PostForm() {
   return (
-    <form
-      className="flex flex-col space-y-2 bg-black text-gray-900 p-4"
-      onSubmit={async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const platform = formData.get("platform") as string | null;
-        const username = formData.get("username") as string | null;
-        const password = formData.get("password") as string | null;
-        const email = formData.get("email") as string | null;
+    <div className="bg-gray-900 rounded p-4">
+      <div className="text-white text-xl font-bold">Save your password</div>
+      <form
+        className="flex flex-col space-y-2 text-gray-900 p-4 rounded"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const platform = formData.get("platform") as string | null;
+          const username = formData.get("username") as string | null;
+          const password = formData.get("password") as string | null;
+          const email = formData.get("email") as string | null;
 
-        if (email && platform && username && password && isValidEmail(email)) {
-          await createPost(email, platform, username, password);
-        }
-        e.currentTarget.reset();
-      }}
-    >
-      <input type="text" name="platform" placeholder="Platform" required />
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="email" name="email" placeholder="email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit" className="bg-white text-gray-900">
-        Save
-      </button>
-    </form>
+          if (
+            email &&
+            platform &&
+            username &&
+            password &&
+            isValidEmail(email)
+          ) {
+            await createPost(email, platform, username, password);
+          }
+          e.currentTarget.reset();
+        }}
+      >
+        <input
+          type="text"
+          name="platform"
+          placeholder="Platform"
+          required
+          className="bg-gray-800 text-white p-2 rounded"
+        />
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          required
+          className="bg-gray-800 text-white p-2 rounded"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          className="bg-gray-800 text-white p-2 rounded"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          className="bg-gray-800 text-white p-2 rounded"
+        />
+        <button type="submit" className="bg-white text-gray-900 p-2 rounded">
+          Save
+        </button>
+      </form>
+    </div>
   );
 }
 async function createPost(
